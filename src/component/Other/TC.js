@@ -1,7 +1,4 @@
 import React, { Fragment, useEffect, useState, useRef } from "react";
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
 import "../Home/Home.css";
 import MetaData from "../layout/MetaData";
 import ScrollAnimation from 'react-animate-on-scroll';
@@ -14,30 +11,7 @@ const TC = () => {
     return (
         <Fragment>
           (
-=======
-import { CgMouse } from "react-icons/cg";
-import { DiCelluloid } from "react-icons/di";
 
->>>>>>> 5357168211ffcf612ed88ca5e90da4352ef3a81a
-import "../Home/Home.css";
-import MetaData from "../layout/MetaData";
-import ScrollAnimation from 'react-animate-on-scroll';
-import "animate.css/animate.compat.css";
-
-
-const TC = () => {
-
-
-    return (
-        <Fragment>
-<<<<<<< HEAD
-          (
-=======
-            {loading ? (
-                <Loader />
-            ) : (
->>>>>>> d8da131a4f02e1d2712ecb387a22d16de5d4e8cf
->>>>>>> 5357168211ffcf612ed88ca5e90da4352ef3a81a
                 <Fragment>
                     <MetaData title="Home" />
 
@@ -98,15 +72,7 @@ B. No Joint Venture, No Derogation of Rights. You agree that no joint venture, p
 
                 </Fragment>
             )
-<<<<<<< HEAD
-            
-=======
-<<<<<<< HEAD
-            
-=======
-            }
->>>>>>> d8da131a4f02e1d2712ecb387a22d16de5d4e8cf
->>>>>>> 5357168211ffcf612ed88ca5e90da4352ef3a81a
+
         </Fragment >
     );
 };

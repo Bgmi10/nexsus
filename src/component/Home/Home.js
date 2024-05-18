@@ -36,45 +36,24 @@ import oc from "../../images/os.png";
 import course from "../../images/course.png";
 import vapt from "../../images/vapt1.png";
 import { Link } from "@mui/material";
-<<<<<<< HEAD
-import { useNavigate } from "react-router-dom";
-=======
-<<<<<<< HEAD
 import { useNavigate } from "react-router-dom";
 
 const Home = ({ history }) => {
   
 
   const navigate = useNavigate()
-=======
->>>>>>> 5357168211ffcf612ed88ca5e90da4352ef3a81a
-
-const Home = ({ history }) => {
-  
-
-<<<<<<< HEAD
-  const navigate = useNavigate()
-=======
->>>>>>> d8da131a4f02e1d2712ecb387a22d16de5d4e8cf
->>>>>>> 5357168211ffcf612ed88ca5e90da4352ef3a81a
 
 
 
-  const isimge = window.innerWidth >= 784
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 5357168211ffcf612ed88ca5e90da4352ef3a81a
+  const isimge = window.innerWidth >= 768
+
+
   const book = ()=>{
    navigate('/book')
   }
 
-<<<<<<< HEAD
-=======
-=======
->>>>>>> d8da131a4f02e1d2712ecb387a22d16de5d4e8cf
->>>>>>> 5357168211ffcf612ed88ca5e90da4352ef3a81a
+
 
 
   return (
@@ -355,7 +334,6 @@ const Home = ({ history }) => {
             </ScrollAnimation>
             {/* ..img */}
 
-<<<<<<< HEAD
             <ScrollAnimation animateIn="fadeIn" animateOnce="true">
                             <div className="book ">
                                {isimge ? <img src={mt} /> : null}
@@ -367,25 +345,11 @@ const Home = ({ history }) => {
                                 <Button variant="contained" onClick={book}>Book a meeting</Button>
                             </div>
                         </ScrollAnimation>
-            <ScrollAnimation animateIn="fadeIn mb-20">
-=======
+       
+              
+           
             <ScrollAnimation animateIn="fadeIn">
-              <div className={isimge ? "book" : "w-full  book "}>
-                <img src={mt} />
-                <div>
-                  <h3>Book a meeting with us</h3>
-                  <p style={{ marginTop: "10px" }}>Lets Collaborate and discuss about your business goals.
-                  </p>
-                </div>
-<<<<<<< HEAD
-                <Button variant="contained" onClick={book}>Book a meeting</Button>
-=======
-                <Button variant="contained">Book a meeting</Button>
->>>>>>> d8da131a4f02e1d2712ecb387a22d16de5d4e8cf
-              </div>
-            </ScrollAnimation>
-            <ScrollAnimation animateIn="fadeIn">
->>>>>>> 5357168211ffcf612ed88ca5e90da4352ef3a81a
+
               <div className="contact">
                 <div className="baye">
                   <div className="down heading">
