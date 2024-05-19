@@ -5,6 +5,7 @@ import './udemy.css';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import ScrollAnimation from 'react-animate-on-scroll';
+import '../Home/Home.css'
 import { Button } from '@mui/material';
 import mt from "../../images/meet.png";
 
@@ -77,6 +78,7 @@ const Udemy = () => {
                                 <Button variant="contained" onClick={book}>Book a meeting</Button>
                             </div>
                         </ScrollAnimation>
+                        
 
     
     </Fragment>

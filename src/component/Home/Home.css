@@ -794,7 +794,6 @@ option{
   margin-top: -300px;
   font-size: 20px;
 }
-
  
 
   .providing-high{
@@ -885,7 +884,10 @@ margin-bottom: 100px;
   letter-spacing: 1.5;
   line-height: 1.2;
 }
-
+.connect{
+  width: 0px;
+  margin-left: 50px;
+ }
 }
 
 

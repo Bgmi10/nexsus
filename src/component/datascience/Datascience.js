@@ -4,6 +4,7 @@ import Loader from "../layout/Loader/Loader";
 import {Fab, colors} from "@mui/material";
 import { FAQ_auery } from "./datasciencemockdata.js";
 import Box from '@mui/material/Box';
+import '../Home/Home.css'
 import Button from '@mui/material/Button';
 import ch1 from "../../images/et.png";
 import ScrollAnimation from 'react-animate-on-scroll'; 
@@ -186,6 +187,7 @@ const Datascience = ({ history }) => {
                 
         
                <ScrollAnimation animateIn="fadeIn">
+                <div className="divider"></div>
                <p className="flex justify-center text-amber-50 mt-3 ">FAQ</p>
                <h1 className="text-gray-500 justify-center flex text-lg font-medium mt-3">Frequently Asked Questions</h1>
                <p className="text-gray-400 ml-10 mt-3  font-medium ">Discover valuable hands-on experience and professional development opportunities through our dynamic upskilling program designed  to provide practical skills and industry exposure.</p>

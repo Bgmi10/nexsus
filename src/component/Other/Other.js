@@ -114,7 +114,7 @@ const Other = () => {
                             </div>
                         </ScrollAnimation>
                     </div>
-
+             
 
                 </Fragment>
             

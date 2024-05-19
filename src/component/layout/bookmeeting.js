@@ -111,9 +111,10 @@ const Book = () => {
                             </div>
                             {isimg && <p>Let's meet and discuss your ideas</p>}
                             {!isimg && <div  className="daye ">
-                                <p>Fill this form and our team will reach out !</p>
-                                <form  className="w-[600px]">
-                                    <input className="enquiry" placeholder="Name" type="text" value={name}
+                                
+                                <form  className="w-[200px] mt-[350px]">
+                                <p >Fill this form and our team will reach out !</p>
+                                    <input className="enquiry w-1/2" placeholder="Name" type="text" value={name}
                                         onChange={(e) => setName(e.target.value)} />
                                     <input className="enquiry flex"
                                         placeholder="Email"
@@ -151,7 +152,7 @@ const Book = () => {
                         <div>
                          {isimg && <div style={{ display: "block" }} className="daye">
                                 <h2>Fill this form and our team will reach out to you soon!</h2>
-                                <form className="mt-20">
+                                <form >
                                     <input className="enquiry" placeholder="Name" type="text" value={name}
                                         onChange={(e) => setName(e.target.value)} />
                                     <input className="enquiry flex"

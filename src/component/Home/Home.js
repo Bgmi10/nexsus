@@ -424,6 +424,7 @@ const Home = ({ history }) => {
             {/* ..img */}
 
             <ScrollAnimation animateIn="fadeIn" animateOnce="true">
+              <div className="divider"></div>
                             <div className= "book ">
                                {isimge ? <img src={mt} /> : null}
                                 <div className="book1">
@@ -440,6 +441,7 @@ const Home = ({ history }) => {
             <ScrollAnimation animateIn="fadeIn">
 
               <div className={isimge ?"contact" : " mt-20 contact"}>
+             
                 <div className="baye">
                   <div className="down heading">
                     <h2 className="white-why">
@@ -453,7 +455,11 @@ const Home = ({ history }) => {
                   <p className="color-why">Phone - +91 7973454063</p>
 
                 </div>
-               {isimge &&  <div className="daye ">
+
+               {isimge && 
+              
+               
+               <div className="daye ">
                   <h2>  Fill this form and our team will reach out to you soon! </h2>
                   <form className="">
                     <input placeholder="Name" type="text" />
@@ -466,7 +472,8 @@ const Home = ({ history }) => {
                     <Button
                       variant="contained" type="submit" className="tott">Submit</Button>
                   </div>
-                </div> }
+                </div>
+               }
               </div> 
              {!isimge && <div className="daye ml-8 ">
                   <h2> Fill this form and our team will reach out to you soon!</h2>
@@ -484,6 +491,7 @@ const Home = ({ history }) => {
                 </div> }
             </ScrollAnimation>
           </div>
+        
 
         </div>
       </Fragment>

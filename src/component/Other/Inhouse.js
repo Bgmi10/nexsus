@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowCircleRight, faTags } from '@fortawesome/free-solid-svg-icons';
 import ScrollAnimation from 'react-animate-on-scroll';
 import { Button } from '@mui/material';
+import '../Home/Home.css'
 import mt from "../../images/meet.png";
 
 const Inhouse = () => {
@@ -73,6 +74,7 @@ const Inhouse = () => {
                                 <Button variant="contained" onClick={book}>Book a meeting</Button>
                             </div>
                         </ScrollAnimation>
+                     
     </Fragment>
     
   );

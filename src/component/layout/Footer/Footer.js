@@ -1,11 +1,15 @@
 import React from "react";
 import logo from "../../../images/logo.png";
 import "./Footer.css";
-
+import '../../Home/Home.css'
 
 const Footer = () => {
-  return (
+  return (  <div>
+  
+  <div className="divider"></div>
+
     <footer id="footer">
+    
       <div className="leftFooter">
         <img src={logo} alt="logo" />
       </div>
@@ -33,6 +37,9 @@ const Footer = () => {
                     <a href="http://instagram.com/meabhisingh"><img src="https://campalin.com/Courses/social%20icons/linkedin.png" style={{height:"40px", width:"40px"}} ></img></a>
       </div>
     </footer>
+
+    </div>
+
   );
 };
 

@@ -13,6 +13,7 @@ import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import SendIcon from '@mui/icons-material/Send';
 import Button from '@mui/material/Button';
 import bg_icon from '../../src/images/bbb.jpeg';
+import '../component/Home/Home.css'
 
 
 import { useDispatch } from 'react-redux';
@@ -213,7 +214,10 @@ const Signup = () => {
                     </Button>
                 </div>
             </div>
+
+           
         </div>
+        
     );
 };
 

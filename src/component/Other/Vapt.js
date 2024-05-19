@@ -118,7 +118,7 @@ const Vapt = () => {
                         </ScrollAnimation>
                     </div>
 
-
+                
                 </Fragment>
             
         </Fragment >
