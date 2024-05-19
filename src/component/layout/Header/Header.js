@@ -4,6 +4,8 @@ import logo from "../../../images/logo.png";
 import DropdownMenu from "./DropdownMenu";
 import { useSelector } from "react-redux";
 import { api_rout_url } from "../../../utils/Constants";
+import { faClock, faTimes, faUser } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
 const bn13bouncy = keyframes`
@@ -40,9 +42,15 @@ const Header = (props) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const selector = useSelector((store)=> store.auth.isAuthenticated)
    const userId = sessionStorage.getItem('userId');
+   const [user , setuser] = useState(false)
   const handleLogin = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
+  const usericon = () =>{
+    setuser(!user)
+
+  }
 
  
 
@@ -100,9 +108,16 @@ const Header = (props) => {
     {!userId ?<StyledLogin href="/login" onClick={handleLogin}>
         Login
       </StyledLogin>:
-      <StyledLogin href="/login" onClick={handlelogout} >
-      Logout
-    </StyledLogin> }
+
+    <FontAwesomeIcon icon={ !user ? faUser  : faTimes}   className="cursor-pointer  text-gray-400 text-xl" onClick={usericon}/>}
+
+    {user && <div className="border-2 bg-white text-black mt-32 rounded-lg h-20 p-2">
+      <p>profile</p>
+      <p onClick={handlelogout}>Logout</p>
+    </div>}
+       {/* <StyledLogin href="/login" onClick={handlelogout} >
+           
+   </StyledLogin>  */}
       <MobileMenu>
         
       </MobileMenu>
@@ -119,16 +134,16 @@ const Container = styled.div`
   color: white; 
   background-color: black;
   margin-bottom: 0px;
-  position: relative;
+  
   @media (max-width: 768px) {
-    justify-content: flex-end;a
+    justify-content: flex-end;
     padding: 10px;
   }
 `;
 
 const Logo = styled.div`
   flex: 0 0 auto;
-  width: 200px;
+  width: 200px; 
   height: 100%;
   display: ${({ showLogo }) => (showLogo ? "flex" : "none")}; /* Show or hide the logo based on the showLogo prop */
 
@@ -266,3 +281,5 @@ const MobileMenu = styled.div`
 `;
 
 export default Header;
+
+

@@ -333,6 +333,7 @@ body {
 
 .card-data  p{
   text-align: justify;
+
 }
 .card Button{
   font-size: 15px;
@@ -789,6 +790,10 @@ option{
 
 
 @media (max-width: 768px) {
+.daye{
+  margin-top: -300px;
+  font-size: 20px;
+}
 
  
 
@@ -806,7 +811,7 @@ option{
   }
  .book{
   height: 200px;
-  width: 190%;
+  width: 150%;
   margin-top: 10px;
  }
 
@@ -845,7 +850,8 @@ margin-bottom: 100px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  width: 150%;
+  width: 100%;
+  margin-left: -50px;
 }
 .mobil-card-data{
   text-align: center;
@@ -860,6 +866,10 @@ margin-bottom: 100px;
 
 }
 
+.card-data p{
+  font-size: 10px;
+  
+}
 
 .mobil-card-data p{
   font-size: 14px;
@@ -869,7 +879,12 @@ margin-bottom: 100px;
   margin-top: 20px;
 }
 
-
+.baye{
+  width: 180%;
+  margin-left: 5%;
+  letter-spacing: 1.5;
+  line-height: 1.2;
+}
 
 }
 
@@ -878,4 +893,5 @@ margin-bottom: 100px;
     justify-content: center;
     margin-left: 100px;
 }
+
 

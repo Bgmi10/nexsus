@@ -11,6 +11,11 @@ import mt from "../../images/meet.png";
 import { faArrowCircleRight, faStar, faStarHalfStroke, faTags } from '@fortawesome/free-solid-svg-icons';
 
 const Udemy = () => {
+
+  const book = ()=>{
+       window.location.href ="/book"
+  }
+  
   const  isimge = window.innerWidth >= 784
   return (
     <Fragment>
@@ -69,7 +74,7 @@ const Udemy = () => {
                                     {isimge ? <p>Lets Collaborate and discuss about your business goals.
                                     </p> : null}
                                 </div>
-                                <Button variant="contained">Book a meeting</Button>
+                                <Button variant="contained" onClick={book}>Book a meeting</Button>
                             </div>
                         </ScrollAnimation>
 

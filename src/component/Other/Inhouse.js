@@ -11,6 +11,10 @@ import mt from "../../images/meet.png";
 
 const Inhouse = () => {
   const  isimge = window.innerWidth >= 784
+
+  const book = () =>{
+   window.location.href = "/book"
+  }
   
   return (
     <Fragment>
@@ -37,7 +41,7 @@ const Inhouse = () => {
           title="Ethical Hacking"
           author="Priya Patel"
         />
-
+ 
         <Card
           link="/course/datascience"
           imgSrc="https://campalin.com/thumbnsil/programs/data%20thumbnail.png"
@@ -66,7 +70,7 @@ const Inhouse = () => {
                                     {isimge ? <p>Lets Collaborate and discuss about your business goals.
                                     </p> : null}
                                 </div>
-                                <Button variant="contained">Book a meeting</Button>
+                                <Button variant="contained" onClick={book}>Book a meeting</Button>
                             </div>
                         </ScrollAnimation>
     </Fragment>

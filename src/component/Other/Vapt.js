@@ -47,7 +47,7 @@ const Vapt = () => {
                         <ScrollAnimation animateIn="fadeInLeft" animateOnce="true">
                             <div className="box">
                                 <div className="group">
-                                { !isimg ?<img src={ im1}  style={{marginLeft:'60px', position:"absolute" , width:"200px"}} className="mobileimg "/> : null}
+                                { !isimg ?<img src={ im1}  style={{marginLeft:'100px', position:"absolute" , width:"250px"}} className="mobileimg "/> : null}
 
                                     <p className="providing-high">
 
@@ -56,7 +56,7 @@ const Vapt = () => {
 
                                     <p className="white">
 
-                                    Our VAPT experts leverage industry-leading tools and proven methodologies to deliver a meticulous assessment of your website's security posture. We provide a detailed report outlining vulnerabilities, their severity levels, and recommended remediation steps. Don't wait for a security breach to happen.  Contact Nexus Security today and secure your new website with a comprehensive VAPT.                                    </p>
+                                    Our VAPT experts leverage industry-leading tools and proven methodologies to deliver a meticulous assessment of your website's security posture. We provide a detailed report outlining vulnerabilities, their severity levels, and recommended remediation steps. Don't wait for a security breach to happen.  Contact Nexus Security today and secure your new website with a comprehensive VAPT.                                    </p>
                                     <div className="top-button">
                                         <Button variant="contained">Know More</Button>
                                         <Button variant="contained">Get In Touch</Button>
@@ -80,7 +80,7 @@ const Vapt = () => {
                                         <div className="card-data gj">
                                             <img className="card-img" src={api} />
                                             <h2>API Sentinel</h2>
-                                            <p> APIs, or Application Programming Interfaces, ensure seamless communication between applications and data. However, these connectors can become security vulnerabilities if not properly secured. Our API Sentinel VAPT service examines your APIs for weaknesses, identifying potential exploits that could compromise sensitive data. We act as vigilant guardians, ensuring the integrity and security of your API integrations.</p>
+                                            <p> APIs, or Application Programming Interfaces, ensure seamless communication between applications and data. However, these connectors can become security vulnerabilities if not properly secured. Our API Sentinel VAPT service examines your APIs for weaknesses, identifying potential exploits that could compromise sensitive data. We act as vigilant guardians</p>
 
                                         </div>
                                     </div>

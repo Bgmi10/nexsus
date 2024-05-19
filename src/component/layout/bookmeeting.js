@@ -79,7 +79,7 @@ const Book = () => {
             
             if (response.ok) {
                 const result = await response.json();
-                toast.success('Form submitted successfully: ' + result);
+                toast.success('Form submitted successfully' );
                 setResponse(true);
                 // Optionally, reset the form
                 setName('');
@@ -106,10 +106,42 @@ const Book = () => {
                         <div className="baye">
                             <div className="down heading">
                                 <h2 className="white-why ">
-                                    <span className="color-why ml-2 ">Book a meeting</span>
+                                    <span className="color-why  ">{isimg ? "Book a meeting" : "Book a meet" }</span>
                                 </h2>
                             </div>
-                            <p>Let's meet and discuss your ideas</p>
+                            {isimg && <p>Let's meet and discuss your ideas</p>}
+                            {!isimg && <div  className="daye ">
+                                <p>Fill this form and our team will reach out !</p>
+                                <form  className="w-[600px]">
+                                    <input className="enquiry" placeholder="Name" type="text" value={name}
+                                        onChange={(e) => setName(e.target.value)} />
+                                    <input className="enquiry flex"
+                                        placeholder="Email"
+                                        type="email"
+                                        value={email}
+                                        onChange={(e) => setEmail(e.target.value)} />
+                                    <input className="enquiry"
+                                        placeholder="Phone No."
+                                        type="text"
+                                        value={phone}
+                                        onChange={(e) => setPhone(e.target.value)} />
+                                    <select className="enquiry" value={service} onChange={(e) => setService(e.target.value)}>
+                                        <option value="">Choose Category</option>
+                                        {categories.map((cate) => (
+                                            <option key={cate} value={cate}>
+                                                {cate}
+                                            </option>
+                                        ))}
+                                    </select>
+                                    <input placeholder="General enquiry"
+                                        type="text" className="enquiry message"
+                                        value={reason}
+                                        onChange={(e) => setReason(e.target.value)} />
+                                   
+                                </form>
+                                <Button
+                                        variant="contained" type="submit" onClick={submitForm}>Submit</Button>
+                            </div> }
                         </div>
                         {response ? (
                             <div className="daye">
@@ -117,9 +149,9 @@ const Book = () => {
                             </div>
                         ) : 
                         <div>
-                         {isimg ? <div style={{ display: "block" }} className="daye">
+                         {isimg && <div style={{ display: "block" }} className="daye">
                                 <h2>Fill this form and our team will reach out to you soon!</h2>
-                                <form >
+                                <form className="mt-20">
                                     <input className="enquiry" placeholder="Name" type="text" value={name}
                                         onChange={(e) => setName(e.target.value)} />
                                     <input className="enquiry flex"
@@ -148,45 +180,17 @@ const Book = () => {
                                 </form>
                                 <Button
                                         variant="contained" type="submit" onClick={submitForm}>Submit</Button>
-                            </div> : null}
+                            </div> }
                         </div>
                     }
                      <div>
                         
-                         {!isimg ? <div style={{ display: "block" }} className="daye flex-col">
-                                <h2>Fill this form and our team will reach out to you soon!</h2>
-                                <form >
-                                    <input className="enquiry" placeholder="Name" type="text" value={name}
-                                        onChange={(e) => setName(e.target.value)} />
-                                    <input className="enquiry flex"
-                                        placeholder="Email"
-                                        type="email"
-                                        value={email}
-                                        onChange={(e) => setEmail(e.target.value)} />
-                                    <input className="enquiry"
-                                        placeholder="Phone No."
-                                        type="text"
-                                        value={phone}
-                                        onChange={(e) => setPhone(e.target.value)} />
-                                    <select className="enquiry" value={service} onChange={(e) => setService(e.target.value)}>
-                                        <option value="">Choose Category</option>
-                                        {categories.map((cate) => (
-                                            <option key={cate} value={cate}>
-                                                {cate}
-                                            </option>
-                                        ))}
-                                    </select>
-                                    <input placeholder="General enquiry"
-                                        type="text" className="enquiry message"
-                                        value={reason}
-                                        onChange={(e) => setReason(e.target.value)} />
-                                   
-                                </form>
-                                <Button
-                                        variant="contained" type="submit" onClick={submitForm}>Submit</Button>
-                            </div> : null}
+                    
                         </div>
+                        
+                        
                     </div>
+                   
                 </div>
             </div>
             <ToastContainer />

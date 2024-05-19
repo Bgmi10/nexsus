@@ -35,7 +35,10 @@ import bt6 from "../../images/bt6.png";
 import oc from "../../images/os.png";
 import course from "../../images/course.png";
 import vapt from "../../images/vapt1.png";
-import { Link } from "@mui/material";
+import { Link,  isMuiElement } from "@mui/material";
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import Slider from 'react-slick';
 import { useNavigate } from "react-router-dom";
 
 const Home = ({ history }) => {
@@ -53,6 +56,46 @@ const Home = ({ history }) => {
    navigate('/book')
   }
 
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 4000,
+    responsive: [
+      
+      {
+        breakpoint: 768, // Adjust breakpoint as needed
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+      // Add more breakpoints if needed
+    ]
+  };
+  
+
+
+  const testimonials = [
+    {
+      content: `"As someone who has had the privilege of collaborating with Nexus Security on numerous pen-testing projects, I can attest to their exceptional skills in manual pen testing. They showcased his technical proficiency by identifying vulnerabilities and simulating cyberattacks. There was methodical in his approach, meticulously exploring applications, network devices, and cloud infrastructures. Beyond technical skills, Employees excels in communication, with thorough, concise, and actionable reports. I cant recommend Nexus Security highly enough for any pen testing engagement."`,
+      author: "Ujjal Bose",
+      designation: "Solution Junction, Director",
+    },
+    {
+      content: `"I highly recommend Nexus Security for exceptional expertise in ransomware risk mitigation and cybersecurity. Thier proactive strategies and dedication have significantly strengthened our defenses. The contributions have been invaluable to our organisation from last 1 year."`,
+      author: "Sanjeev Ahuja",
+      designation: "United Marathon Pvt Ltd, Director",
+    },
+    {
+      content: `"I wanted to express my sincere appreciation for the exceptional pentesting services Nexus Security provided. Their attention to detail and thoroughness in identifying vulnerabilities were truly impressive. The findings have been invaluable in enhancing our cybersecurity posture. Thank you for their outstanding work."`,
+      author: "Mohammad Ruman",
+      designation: "Kreative Digital Media, Founder",
+    },
+  ];
 
 
 
@@ -64,7 +107,7 @@ const Home = ({ history }) => {
         <div className={isimge ? `main` : `main`}>
           <div className="Box" style={{marginLeft:'8%'}}>
 
-            <img src={ch1} className={isimge ? `absolute h-96 mt-32 ml-[750px] rounded-md` : ` absolute mt-10 w-24 ml-[200px] h-24 `} alt="Ethical Hacking" />
+            <img src={ch1} className={isimge ? `absolute h-96 mt-32 ml-[750px] rounded-md` : ` absolute mt-10  ml-[200px] w-40 h-52  `} alt="Ethical Hacking" />
             <div className="group" >
               <p className={isimge ? `providing-high mt-20 ml-20` : ` bg-transparent   providing-high mt-5   `}>
                 Securing Data
@@ -88,14 +131,14 @@ const Home = ({ history }) => {
             <div className="why">
 
               <div className={isimge ? `heading` : `heading`}>
-                <h2 className={isimge ? `white-why` : `  text-md ml-0 `}> Why</h2>
+                <h2 className={isimge ? `white-why` : `  text-md ml-[-10px] `}> Why</h2>
                 <h2 className={isimge ? `color-why` : ` color-why  `}> &nbsp; Why NEXUS SECURITY?</h2>
               </div>
               <p className={isimge ? `information` : `text-white  ml-2 p-[70px]`}>
                 We're more than just a security company. We're your trusted partner in the fight against cybercrime. We'll work with you to understand your unique needs and develop a security plan that's right for you. We don't wait for attacks to happen before we take action. We take a proactive approach to security, constantly identifying and mitigating risks before they can become problems. We know that security threats can be a major source of stress. That's why we're here to give you the peace of mind that comes with knowing your data is in good hands.
               </p>
 
-              <div className={isimge ? `connect` : ` h-10 w-10 connect mb-80 `}>
+              <div className={isimge ? `connect` : ` h-10 w-10 connect mb-[320px] `}>
                 <div className={isimge ? `block` : `  block `}>
                   <h2 className={isimge ? ` ` : ` `}>Proactive Approach</h2>
                   <p> We don't just react to security incidents; we proactively identify and address potential threats before they can cause damage. We take a comprehensive approach to security, considering all aspects of your IT infrastructure.</p>
@@ -103,7 +146,7 @@ const Home = ({ history }) => {
              {isimge ? <img src={line1}  /> : null}
               </div>
 
-             {isimge ? <div className={isimge ? `second connect` : ` connet w-full    `}>
+             {isimge ? <div className={isimge ? `second connect` : ` connet w-full `}>
                 <img src={line2} className="line2" />
                 <div className="block">
                   <h2>Nexus Shield </h2>
@@ -113,7 +156,7 @@ const Home = ({ history }) => {
               </div> : null}
             
               
-            { !isimge ? <div className={isimge ? ` connect` : ` w-full connect mb-10`} >
+            { !isimge ? <div className={isimge ? ` connect` : ` w-full connect mb-14`} >
                 <div className="block">
                 <h2>Nexus Shield </h2>
                   <p>Our proprietary security framework incorporates a layered defense strategy, advanced threat detection, and continuous monitoring to provide impenetrable protection for your business.</p>
@@ -130,10 +173,26 @@ const Home = ({ history }) => {
             
           </ScrollAnimation>
           <ScrollAnimation animateIn="fadeIn">
-            <div className={isimge ? `services` : `services h-full w-full  mt-20 ml-5 `}>
+            <div className={isimge ? `services` : `services h-full w-full  mt-10  `}>
               <h2 className={isimge ? `color-why` : `color-why `}>Our Services</h2>
               <div className={isimge ? `ddcards` : ``}>
-             {isimge ? <div className="card">
+             
+             
+                {!isimge ?<div className="">
+                  <div className="th gj">
+                    <img className="card-img" src={course} />
+                    <a href='/vapt'>
+                    <div className=" border-2 w-80 ml-4   mt-4 rounded-md  border-gray-400 ">
+                    <h2  className="text-white  text-3xl">VAPT</h2>
+                   <p  className="text-md text-gray-400">  Web VAPT</p>
+                    <p className="text-md text-gray-400 ">  API VAPT</p>
+                    <p className="text-md text-gray-400">  Network VAPT</p>
+                    <p className="text-md text-gray-400" >   Smart Contract VAPT</p>
+                    </div>
+                    </a>
+                  </div>
+                  </div> : null}
+                  {isimge ? <div className="card">
               <a href="/vapt">
                   <div className={ isimge ?"th card-data gj" : "flex th card-data"} >
                     <img className={isimge ? `card-img` : `card-img `} src={vapt} />
@@ -145,48 +204,64 @@ const Home = ({ history }) => {
                   </div>
                   </a>
                 </div> : null}
-                {!isimge ?<div className="card">
-                  <div className="th card-data gj">
-                    <img className="card-img" src={course} />
-                    <h2>VAPT</h2>
-                   <p>  Web VAPT</p>
-                    <p>  API VAPT</p>
-                    <p>  Network VAPT</p>
-                    <p>  Smart Contract VAPT</p>
-                  </div>
-                  </div> : null}
-
-                <div className="card">
-                  <div className="th card-data gj">
-                    <img className="card-img" src={course} />
+                {isimge ? <div className="card">
+              <a href="/vapt">
+                  <div className={ isimge ?"th card-data gj" : "flex th card-data"} >
+                    <img className={isimge ? `card-img` : `card-img `} src={course} />
                     <h2>Courses</h2>
-                    <a href="/In-house"><p>  In-house Courses</p></a>
+                  <a href="/In-house"><p>  In-house Courses</p></a> 
                     <a href="/collab"><p>  Collaborations Courses</p></a>
                     <a href="/udemy"><p>  Udemy Courses</p></a>
-                  </div>
-                </div>
-
-                <div className="card">
-                <a href="/other">
-                  <div className="th card-data gj">
-                    <img className="card-img" src={oc} />
-                    <h2>Other Services</h2>
-                    <p>  Ransomware & litigation</p>
-                    <p>  CTF collaboration</p>
-                    <p>  Webinars & Seminars</p>
-                    <p>  Employee Training</p>
+                    
                   </div>
                   </a>
-                </div>
+                </div> : null}
+                {isimge ? <div className="card">
+              <a href="/other">
+                  <div className={ isimge ?"th card-data gj" : "flex th card-data"} >
+                    <img className={isimge ? `card-img` : `card-img `} src={oc} />
+                    <h2>Other Services</h2>
+                  <p>   Ransomware & litigation</p> 
+                <p>  Webinars & Seminars</p>
+                    <p>   CTF collaboration</p>
+                    <p> Employee Training</p>
+                    
+                  </div>
+                  </a>
+                </div> : null}
 
+             {!isimge &&   <div className="">
+                  <div className="th  gj">
+                    <img className="card-img" src={course} />
+                    <div className="border-2 w-80 ml-4  justify-center mt-4 rounded-md  border-gray-400">
+                    <h2   className="text-white  text-3xl">Courses</h2>
+                    <a href="/In-house"><p className="text-md text-gray-400">  In-house Courses</p></a>
+                    <a href="/collab"><p className="text-md text-gray-400">  Collaborations Courses</p></a>
+                    <a href="/udemy"><p className="text-md text-gray-400">  Udemy Courses</p></a>
+                    </div>
+                  </div>
+                </div>}
+               {!isimge && <div className="">
+                  <div className="th  gj">
+                    <img className="card-img" src={oc} />
+                    <a href="/other">
+                    <div className="border-2 w-80 ml-4 justify-center mt-4 rounded-md  border-gray-400">
+                    <h2   className="text-white  text-3xl">Other Services</h2>
+                  <p className="text-md text-gray-400"> Ransomware & litigation</p>
+                    <p className="text-md text-gray-400"> CTF collaboration</p>
+                    <p className="text-md text-gray-400"> Webinars & Seminars</p>
+                  <p className="text-md text-gray-400">  Employee Training</p>
+                    </div>
+                    </a>
+                  </div>
+                </div>}
 
-
-
+              
               </div>
             </div>
           </ScrollAnimation>
           <ScrollAnimation animateIn="fadeIn ">
-            <div className={isimge ? `founder` : ` founder `}>
+            <div className={isimge ? `founder` : ` founder  mt-20 ml-2`}>
               <div className={isimge ? `img-fo` : ``}>
                 <img src={founder} className="" />
               </div>
@@ -197,12 +272,12 @@ const Home = ({ history }) => {
               </div>
             </div>
           </ScrollAnimation>
-          <div className={isimge ? `rest mb-20` : ``}>
+          <div className={isimge ? `rest mb-20` : `ml-[-15px]`}>
             <ScrollAnimation animateIn="fadeIn">
               <div className={isimge ? `apart` : `apart`}>
                 <div className=" ">
                   <div className="cont">
-                    <div className={isimge ? `pic` : `w-20 h-auto`}>
+                    <div className={isimge ? `pic` : `w-60 h-auto`}>
                       <img src={ct} />
                     </div>
                     <div className="shb">
@@ -215,7 +290,7 @@ const Home = ({ history }) => {
                     </div>
                   </div>
                   <div className="cont">
-                    <div className="pic">
+                    <div className={isimge ? `pic` : `w-60 h-auto`}>
                       <img src={ct2} />
                     </div>
                     <div className="shb">
@@ -225,7 +300,7 @@ const Home = ({ history }) => {
                     </div>
                   </div>
                   <div className="cont">
-                    <div className="pic">
+                  <div className={isimge ? `pic` : `w-60 h-auto`}>
                       <img src={sot2} />
                     </div>
                     <div className="shb">
@@ -235,7 +310,7 @@ const Home = ({ history }) => {
                     </div>
                   </div>
                   <div className="cont">
-                    <div className="pic">
+                  <div className={isimge ? `pic` : `w-60 h-auto`}>
                       <img src={sot} />
                     </div>
                     <div className="shb">
@@ -263,17 +338,17 @@ const Home = ({ history }) => {
                   <h2 className="white-why">that</h2>
                   <h2 className={isimge ? "color-why" : "color-why  "} >&nbsp;trust us</h2>
                 </div>
-                <div className={isimge ? `data` : ` data `} style={{ paddingLeft: '3%' }}>
+                <div className={isimge ? `data` : ` data h-32 w-96 `} style={{ paddingLeft: '3%' }}>
                   <img src={bt1} />
                   <img src={bt2} />
                   <img src={bt3} />
                   <img src={bt6} />
                 </div>
 
-                <div className={isimge ? "testimonial " : "testimonial"}>
+               {isimge &&  <div className={isimge ? "testimonial " : ""}>
                   <h1> Testimonials</h1>
-                  <div className="test-grid">
-                    <div className="testimo">
+                  <div className={isimge  ? " test-grid " : null} >
+                    <div className={isimge ? "testimo" : null}> 
                       <p>
                         "As someone who has had the privilege of collaborating with Nexus Security on numerous pen-testing projects, I can attest to their exceptional skills in manual pen testing. They showcased his technical proficiency by identifying vulnerabilities and simulating cyberattacks. There was methodical in his approach, meticulously exploring applications, network devices, and cloud infrastructures. Beyond technical skills, Employees excels in communication, with thorough, concise, and actionable reports. I cant recommend Nexus Security highly enough for any pen testing engagement."
                       </p>
@@ -310,24 +385,38 @@ const Home = ({ history }) => {
                       </div>
                     </div>
                   </div>
-                </div>
+                </div>}
+                {!isimge &&<h1 className="mt-20"> Testimonials</h1>}
+    {!isimge  && <Slider {...settings} className="mt-10">
+        {testimonials.map((testimonial, index) => (
+          <div key={index} className={isimge ? "testimo" : null}>
+            <p className="text-gray-400 mt-20 text-lg ml-10">{testimonial.content}</p>
+            <div className="ab">
+              <div className="qua">
+                <p className="text-white ml-10 mt-5">{testimonial.author},</p>
+                <p className="text-white ml-10 mt-5">{testimonial.designation}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </Slider>}
               </div>
             </ScrollAnimation>
             <ScrollAnimation animateIn="fadeIn">
-              <div className="partners">
+              <div className={isimge ? " partners" : "partners mt-10"}>
                 <div className="down heading">
-                  <h2 className="white-why">Our</h2>
-                  <h2 className="color-why">Collaborations</h2>
-                  <div className={isimge ? " clb ddata " : "clb ddata "}>
-                    <img src={cl1} />
-                    <img src={cl2} />
-                    <img src={cl3} />
+                  <h2 className={"white-why"}>Our</h2>
+                  <h2 className={  "color-why" }> {isimge ?"Collaborations": "Collaboration"}</h2>
+                  <div className={isimge ? " clb ddata " : "h-28 w-28 mt-10 flex  "}>
+                    <img src={cl1} className="rounded-md ml-0" />
+                    <img src={cl2} className="rounded-md ml-4" />
+                    <img src={cl3}  className="rounded-md ml-4"/>
 
 
                   </div>
-                  <div className=" clb dddata">
-                    <img src={cl4} />
-                    <img src={cl5} />
+                  <div className={isimge ?" clb dddata" : "w-28 h-28 flex mt-10  mb-20 "}>
+                    <img src={cl4} className="rounded-md ml-4" />
+                    <img src={cl5} className="rounded-md ml-4"/>
                   </div>
                 </div>
               </div>
@@ -335,7 +424,7 @@ const Home = ({ history }) => {
             {/* ..img */}
 
             <ScrollAnimation animateIn="fadeIn" animateOnce="true">
-                            <div className="book ">
+                            <div className= "book ">
                                {isimge ? <img src={mt} /> : null}
                                 <div className="book1">
                                   <h3>Book a meeting with us</h3> 
@@ -350,11 +439,11 @@ const Home = ({ history }) => {
            
             <ScrollAnimation animateIn="fadeIn">
 
-              <div className="contact">
+              <div className={isimge ?"contact" : " mt-20 contact"}>
                 <div className="baye">
                   <div className="down heading">
                     <h2 className="white-why">
-                      <span className="white-why">Let us know how we can</span> <span className="color-why">help you?</span>
+                      <span className="white-why ">Let us know how we can</span> <span className="color-why">help you?</span>
                     </h2>
 
 
@@ -364,9 +453,9 @@ const Home = ({ history }) => {
                   <p className="color-why">Phone - +91 7973454063</p>
 
                 </div>
-               {isimge ?  <div className="daye">
-                  <h2> Fill this form and our team will reach out to you soon!</h2>
-                  <form>
+               {isimge &&  <div className="daye ">
+                  <h2>  Fill this form and our team will reach out to you soon! </h2>
+                  <form className="">
                     <input placeholder="Name" type="text" />
                     <input placeholder="Email" type="text" className="flex" />
                     <textarea placeholder="Message" type="text" className="message" />
@@ -377,12 +466,12 @@ const Home = ({ history }) => {
                     <Button
                       variant="contained" type="submit" className="tott">Submit</Button>
                   </div>
-                </div> : null}
+                </div> }
               </div> 
-             {!isimge ? <div className="daye ml-10">
+             {!isimge && <div className="daye ml-8 ">
                   <h2> Fill this form and our team will reach out to you soon!</h2>
-                  <form>
-                    <input placeholder="Name" type="text" />
+                  <form className="w-[600px]">
+                    <input placeholder="Name" type="text"  className="w-52"/>
                     <input placeholder="Email" type="text" className="flex" />
                     <textarea placeholder="Message" type="text" className="message" />
 
@@ -390,9 +479,9 @@ const Home = ({ history }) => {
                   </form>
                   <div className=" ">
                     <Button
-                      variant="contained" type="submit" className="tott">Submit</Button>
+                      variant="contained" type="submit" >Submit</Button>
                   </div>
-                </div> : null}
+                </div> }
             </ScrollAnimation>
           </div>
 
